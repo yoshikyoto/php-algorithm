@@ -3,5 +3,8 @@
         "psr-4": {
             "Algorithm\\": "src"
         }
+    },
+    "require": {
+        "phpunit/phpunit": "5.7.*"
     }
 }
