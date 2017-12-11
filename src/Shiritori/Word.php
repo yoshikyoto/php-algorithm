@@ -2,10 +2,13 @@
 
 namespace Algorithm\Shiritori;
 
-class Word {
+use Algorithm\Graph\Edge;
+
+class Word extends Edge {
     private $str;
     private $first;
     private $last;
+    private $isUsed;
 
     public function __construct($str) {
         $this->str = $str;
@@ -14,7 +17,7 @@ class Word {
     }
 
     public function __toString() {
-        return $str;
+        return $this->str;
     }
 
     public function getFirst() {
@@ -23,5 +26,17 @@ class Word {
 
     public function getLast() {
         return $this->last;
+    }
+
+    public function isUsed() {
+        return $this->isUsed;
+    }
+
+    public function used() {
+        return $this->isUsed = true;
+    }
+
+    public function unused() {
+        return $this->isUsed = false;
     }
 }
